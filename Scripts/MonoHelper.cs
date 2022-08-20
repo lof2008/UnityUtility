@@ -1,9 +1,10 @@
+using Lof.Common;
 using UnityEngine;
 
-namespace Lof.Utility
+namespace Lof
 {
-    public class MonoHelper : MonoBehaviour
+    public class MonoHelper : MonoSingleton<MonoHelper>
     {
-
+       
     }
 }

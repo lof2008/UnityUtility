@@ -4,18 +4,15 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.Networking;
 
-namespace Lof.Utility.Utility
+namespace Lof.Utility.UnityEngineUtility
 {
-    public class ImageUtility
+    public class TextureUtility
     {
-        class ImageLoadMono : MonoBehaviour { }
+        private static MonoHelper mono = default;
 
-        private static ImageLoadMono mono;
-
-        static ImageUtility()
+        static TextureUtility()
         {
-            mono = new GameObject("ImageLoad").AddComponent<ImageLoadMono>();
-            UnityEngine.Object.DontDestroyOnLoad(mono.gameObject);
+            mono = MonoHelper.I;
         }
 
         public static void Load(string path, Action<string, Texture2D> callback)

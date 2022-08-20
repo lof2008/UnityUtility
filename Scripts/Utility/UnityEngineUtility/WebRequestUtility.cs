@@ -3,7 +3,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.Networking;
 
-namespace Lof.Utility
+namespace Lof.Utility.UnityEngineUtility
 {
     public partial class WebRequestUtility
     {
@@ -11,8 +11,7 @@ namespace Lof.Utility
 
         static WebRequestUtility()
         {
-            mono = new GameObject("WebRequest").AddComponent<MonoHelper>();
-            UnityEngine.Object.DontDestroyOnLoad(mono);
+            mono = MonoHelper.I;
         }
 
         public static void GetString(string url, Action<string> callback)
